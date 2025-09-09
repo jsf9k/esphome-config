@@ -39,13 +39,13 @@ cover:
       - output.turn_on: blind_down
       - delay: 500ms
       - output.turn_off: blind_down
-    close_duration: 10s
+    close_duration: 20s
 
     open_action:
       - output.turn_on: blind_up
       - delay: 500ms
       - output.turn_off: blind_up
-    open_duration: 10s
+    open_duration: 20s
 
     stop_action:
       - output.turn_on: blind_stop
