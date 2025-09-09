@@ -1,0 +1,52 @@
+esphome:
+  name: skylight
+
+esp8266:
+  board: nodemcuv2
+
+packages:
+  base: !include ../packages/base.yaml
+  wifi: !include ../packages/wifi.yaml
+
+output:
+  - &common_output_config
+    id: blind_up
+    platform: gpio
+    pin:
+      &common_pin_config
+      number: 12
+      mode:
+        output: true
+      inverted: true
+
+  - <<: *common_output_config
+    id: blind_stop
+    pin:
+      <<: *common_pin_config
+      number: 13
+
+  - <<: *common_output_config
+    id: blind_down
+    pin:
+      <<: *common_pin_config
+      number: 14
+
+cover:
+  - platform: time_based
+    name: Blind
+    close_action:
+      - output.turn_on: blind_down
+      - delay: 500ms
+      - output.turn_off: blind_down
+    close_duration: 10s
+
+    open_action:
+      - output.turn_on: blind_up
+      - delay: 500ms
+      - output.turn_off: blind_up
+    open_duration: 10s
+
+    stop_action:
+      - output.turn_on: blind_stop
+      - delay: 500ms
+      - output.turn_off: blind_stop
