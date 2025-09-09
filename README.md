@@ -11,7 +11,17 @@ This repository contains the ESPHome configurations for my home.
 
 ## Usage ##
 1. Clone this repo
-2. Copy `secrets.yaml.example` → `secrets.yaml` and fill in your WiFi and API secrets
-3. Flash a device:
+2. `cd` into the repo
+3. Copy `secrets.yaml.example` → `secrets.yaml` and fill in your WiFi and API secrets
+4. Create a Python virtual environment:
+   ```bash
+   pyenv virtualenv 3.13.7 esphome-config
+   ```
+5. Activate the Python virtual environment:
+   ```bash
+   pyenv local esphome-config
+   ```
+6. Flash a device:
    ```bash
    esphome run devices/skylight.yaml
+   ```
