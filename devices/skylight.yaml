@@ -35,6 +35,8 @@ cover:
   - platform: time_based
     name: Blind
     has_built_in_endstop: true
+    manual_control: true
+
     close_action:
       - output.turn_on: blind_down
       - delay: 500ms
