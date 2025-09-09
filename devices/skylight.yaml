@@ -33,6 +33,7 @@ output:
 
 cover:
   - platform: time_based
+    device_class: shade
     name: Blind
     has_built_in_endstop: true
     manual_control: true
