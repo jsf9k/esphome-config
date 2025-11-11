@@ -15,11 +15,11 @@ This repository contains the ESPHome configurations for my home.
 3. Copy `secrets.yaml.example` → `secrets.yaml` and fill in your WiFi and API secrets
 4. Create a Python virtual environment:
    ```console
-   pyenv virtualenv 3.13.7 esphome-config
+   pipenv install
    ```
 5. Activate the Python virtual environment:
    ```console
-   pyenv local esphome-config
+   pipenv shell
    ```
 6. Flash a device:
    ```console
