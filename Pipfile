@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-esphome = ">=2025.11.3"
+esphome = ">=2025.12.5"
 
 [dev-packages]
 
