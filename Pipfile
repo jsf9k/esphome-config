@@ -10,4 +10,3 @@ esphome = ">=2025.11.3"
 
 [requires]
 python_version = "3.13"
-python_full_version = "3.13.9"
